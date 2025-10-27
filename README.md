@@ -18,6 +18,7 @@ cd WSDT
 conda create -n wsdt python=3.11 -y
 conda activate wsdt
 pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
+pip install diffusers==0.32.2
 ```
 
 # Inference
@@ -26,3 +27,18 @@ To generate the images that are consistent with the reference style images and a
 python run_wsdt.py --input_image examples/input1.png --thres 0.2 --output_path output
 ```
 The threshold (parameter thres) determines the style consistency of generated images with the reference style image. The generated image will be saved in the output folder.
+
+# License
+WSDT is licensed under the Apache 2.0 license.
+
+# Citation
+If you find this work useful for your research, please consider citing our paper:
+```
+@inproceedings{yu2025wasserstein,
+  title={Wasserstein Style Distribution Analysis and Transform for Stylized Image Generation},
+  author={Yu, Xi and Gu, Xiang and Shi, Zhihao and Sun, Jian},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={17496--17505},
+  year={2025}
+}
+```
