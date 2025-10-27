@@ -15,14 +15,14 @@ cd WSDT
 
 ## 2. Create Conda Environment and Install Dependencies
 ```
-conda create -n wsdt python=3.8 -y
+conda create -n wsdt python=3.11 -y
 conda activate wsdt
-pip install torch==2.0.0 torchvision ==0.15.1 --index-url https://download.pytorch.org/whl/cu118
+pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
 ```
 
 # Inference
-To generate the image that are consistent with a reference style image and aligned with the provided text prompt, simply run the following command:
+To generate the images that are consistent with the reference style images and aligned with the provided text prompts, simply run the following command:
 ```
-python run_wsdt.py --input_image examples/input1.png --cont_prompt --sty_prompt --thres 0.2 --output_path output
+python run_wsdt.py --input_image examples/input1.png --thres 0.2 --output_path output
 ```
-The threshold (parameter thres) determines the style consistency of generated images with the reference style image.
+The threshold (parameter thres) determines the style consistency of generated images with the reference style image. The generated image will be saved in the output folder.
